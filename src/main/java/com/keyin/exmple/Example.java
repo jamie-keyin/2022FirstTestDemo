@@ -5,6 +5,12 @@ import java.util.List;
 public class Example {
     private PersonDB personDB;
 
+    public String getName() {
+        return name;
+    }
+
+    private String name;
+
     public Example() {
     }
 
@@ -35,11 +41,18 @@ public class Example {
         return personFound;
     }
 
-    public PersonDB getPersonDB() {
+    protected PersonDB getPersonDB() {
         return personDB;
     }
 
     public void setPersonDB(PersonDB personDB) {
         this.personDB = personDB;
+    }
+
+    public static Example getNewExample(String name) {
+        Example toReturn = new Example();
+        toReturn.name = name;
+
+        return toReturn;
     }
 }

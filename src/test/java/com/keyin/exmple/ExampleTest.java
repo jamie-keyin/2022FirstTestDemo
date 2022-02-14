@@ -41,9 +41,19 @@ public class ExampleTest {
 
         Mockito.when(personDB.getPeople()).thenReturn(personList);
 
-        Example exmapleUnderTest = new Example(personDB);
+        Example exmapleUnderTest = new Example();
+        exmapleUnderTest.setPersonDB(personDB);
 
         Assertions.assertNotNull(exmapleUnderTest.findPersonByLastName("C"));
+    }
+
+    @Test
+    public void testInstanceCreation() {
+        Example example1 = Example.getNewExample("Jamie");
+
+        Example example2 = Example.getNewExample("Brad");
+
+        Assertions.assertNotEquals(example1.getName(), example2.getName());
     }
 
 }
