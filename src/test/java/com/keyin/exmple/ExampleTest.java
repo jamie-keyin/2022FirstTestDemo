@@ -39,7 +39,7 @@ public class ExampleTest {
         personToFind.setLastName("Cornick");
         personList.add(personToFind);
 
-        Mockito.when(personDB.getPeople()).thenReturn(personList);
+//        Mockito.when(personDB.getPeople()).thenReturn(personList);
 
         Example exmapleUnderTest = new Example();
         exmapleUnderTest.setPersonDB(personDB);
