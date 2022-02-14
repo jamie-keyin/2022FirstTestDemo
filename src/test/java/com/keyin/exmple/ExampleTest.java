@@ -39,6 +39,7 @@ public class ExampleTest {
         personToFind.setLastName("Cornick");
         personList.add(personToFind);
 
+        // fixed it!!
         Mockito.when(personDB.getPeople()).thenReturn(personList);
 
         Example exmapleUnderTest = new Example();
